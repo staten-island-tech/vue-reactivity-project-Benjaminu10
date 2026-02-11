@@ -7,6 +7,7 @@
 <script setup>
 import { ref } from 'vue'
 
+
 const items = ref([
   // Scarlet & Violet - Temporal Forces
   {
