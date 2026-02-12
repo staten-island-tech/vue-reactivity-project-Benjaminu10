@@ -2,7 +2,7 @@
     <div class="card">
 
 <h2>{{ product.name }}</h2>
-<img :src="`${product.img}`" alt="test">
+<img class="cardImg" :src="product.img" alt="test">
 <h3>{{ product.description }}</h3>
 <h3>{{ product.price }}</h3>
 
@@ -21,5 +21,8 @@ defineProps({
 </script>
 
 <style scoped>
-
+.cardImg{
+    width: 130px;
+    height:auto;
+}
 </style>
