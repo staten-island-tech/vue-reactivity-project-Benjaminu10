@@ -2,7 +2,7 @@
     <div class="card">
 
 <h2>{{ product.name }}</h2>
-<img class="cardImg" :src="product.img" alt="test">
+<img class="cardImg" :src="product.img" :alt="product.alt">
 <h3>{{ product.description }}</h3>
 <h3>{{ product.price }}</h3>
 
