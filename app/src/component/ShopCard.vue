@@ -5,12 +5,12 @@
 <img class="cardImg" :src="product.img" :alt="product.alt">
 <h3>{{ product.description }}</h3>
 <h3>{{ product.price }}</h3>
-
+<AddToCartButton :product="product" @add-to-cart="handleAddToCart" />
     </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import AddToCartButton from './AddToCartButton.vue';
 
 defineProps({
     product: {
@@ -18,6 +18,10 @@ defineProps({
         required: true
     }
 })
+
+function handleAddToCart(product) {
+    console.log(product, "added to cart")
+}
 </script>
 
 <style scoped>

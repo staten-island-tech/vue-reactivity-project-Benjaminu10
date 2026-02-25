@@ -1,12 +1,22 @@
 <template>
     <div>
-<button @click="addCart()" :class= "product.name ben">Add To Cart</button>
+<button @click="addCart()" :class="product.name">Add To Cart</button>
     </div>
 </template>
 
 <script setup>
+const props = defineProps({
+    product: {
+        type: Object,
+        required: true
+    }
+})
+
+const emit = defineEmits(["add-to-cart"])
+
+
 function addCart() {
-    const buttons = document.querySelector
+    emit("add-to-cart", props.product)
 }
 </script>
 
