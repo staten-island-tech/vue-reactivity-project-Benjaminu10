@@ -1,5 +1,6 @@
 <template>
     <div>
+        <button></button>
         <h1>TCG Shop</h1>
         <h2>Anti-Scalper Pokeshop</h2>
         <div class ="container">
@@ -9,7 +10,7 @@
 </template>
 
 <script setup>
-import { ref,reactive } from 'vue'
+import { ref, reactive } from 'vue'
 import ShopCard from '@/component/ShopCard.vue';
 
 const items = ref([
@@ -215,11 +216,10 @@ const items = ref([
   },
 
 ])
-const cart = reactive([])
 
-function addToCart(item) {
 
-}
+export const cart = reactive([])
+
 </script>
 
 <style scoped>

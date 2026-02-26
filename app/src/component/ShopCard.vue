@@ -10,6 +10,7 @@
 </template>
 
 <script setup>
+
 import AddToCartButton from './AddToCartButton.vue';
 
 defineProps({
