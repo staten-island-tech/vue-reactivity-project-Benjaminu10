@@ -1,7 +1,7 @@
 <template>
     <div>
         <button></button>
-        <h1>TCG Shop</h1>
+        <h1 class="text-3xl font-bold text-center">TCG Shop</h1>
         <h2>Anti-Scalper Pokeshop</h2>
         <div class ="container">
             <ShopCard v-for="product in items" :key="product.name" :product="product"> <slot><button></button></slot></ShopCard>
@@ -11,7 +11,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
-import ShopCard from '@/component/ShopCard.vue';
+import ShopCard from '@/components/ShopCard.vue';
 
 const items = ref([
   // Scarlet & Violet - Temporal Forces
@@ -216,9 +216,6 @@ const items = ref([
   },
 
 ])
-
-
-export const cart = reactive([])
 
 </script>
 

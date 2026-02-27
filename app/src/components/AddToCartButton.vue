@@ -5,9 +5,7 @@
 </template>
 
 <script setup>
-import { importCart } from '@/views/MainView.vue'
-
-const cart = importCart();
+import { useCartStore } from '@/stores/cart'
 
 const props = defineProps({
     product: {
@@ -18,11 +16,12 @@ const props = defineProps({
 
 const emit = defineEmits(["add-to-cart"])
 
+const cartStore = useCartStore();
 
 function addCart() {
     emit("add-to-cart", props.product)
-    cart.push(props.product)
-    console.log(cart)
+    cartStore.addToCart(props.product)
+    console.log(cartStore.cart)
 }
 </script>
 
