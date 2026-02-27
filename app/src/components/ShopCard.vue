@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="bg-slate-700 w-96 shadow-xl rounded-lg border-2 border-black">
 
 <h2>{{ product.name }}</h2>
 <img class="cardImg" :src="product.img" :alt="product.alt">

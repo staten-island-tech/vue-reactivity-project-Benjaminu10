@@ -1,5 +1,6 @@
 <template>
-    <div>
+  <body class="bg-linear-to-tr from-sky-600 to-slate-800 text-slate-100 min-h-screen flex flex-col items-center justify-center">
+        <div>
         <button></button>
         <h1 class="text-3xl font-bold text-center">TCG Shop</h1>
         <h2>Anti-Scalper Pokeshop</h2>
@@ -7,6 +8,7 @@
             <ShopCard v-for="product in items" :key="product.name" :product="product"> <slot><button></button></slot></ShopCard>
         </div>
     </div>
+  </body>
 </template>
 
 <script setup>
