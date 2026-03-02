@@ -1,12 +1,37 @@
 <template>
-    <div class="card">
-
-<h2>{{ product.name }}</h2>
-<img class="cardImg" :src="product.img" :alt="product.alt">
-<h3>{{ product.description }}</h3>
-<h3>{{ product.price }}</h3>
-<AddToCartButton :product="product" @add-to-cart="handleAddToCart" />
+  <div
+    class="group rounded-xl bg-white shadow-sm ring-1 ring-slate-200
+           hover:shadow-lg transition overflow-hidden flex flex-col"
+  >
+    <div class="aspect-square overflow-hidden bg-slate-100">
+      <img
+        :src="product.img"
+        :alt="product.alt"
+        class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+      />
     </div>
+
+    <div class="flex flex-col gap-2 p-4 flex-1">
+      <h2 class="font-semibold text-slate-900">
+        {{ product.name }}
+      </h2>
+
+      <p class="text-sm text-slate-600 line-clamp-2">
+        {{ product.description }}
+      </p>
+
+      <div class="mt-auto flex items-center justify-between">
+        <span class="text-lg font-bold text-slate-900">
+          {{ product.price }}
+        </span>
+
+        <AddToCartButton
+          :product="product"
+          @add-to-cart="handleAddToCart"
+        />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>

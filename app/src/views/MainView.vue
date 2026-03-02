@@ -1,12 +1,26 @@
 <template>
-    <div>
-        <button></button>
-        <h1 class="text-3xl font-bold text-center">TCG Shop</h1>
-        <h2>Anti-Scalper Pokeshop</h2>
-        <div class ="container">
-            <ShopCard v-for="product in items" :key="product.name" :product="product"> <slot><button></button></slot></ShopCard>
-        </div>
+  <div class="min-h-screen bg-slate-900 px-6 py-10">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="mb-10 text-center">
+        <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight text-white">
+          TCG Shop
+        </h1>
+        <p class="mt-3 text-slate-400 text-lg">
+          Anti-Scalper Pokeshop
+        </p>
+      </div>
+
+      <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <ShopCard
+          v-for="product in items"
+          :key="product.name"
+          :product="product"
+        />
+      </div>
+
     </div>
+  </div>
 </template>
 
 <script setup>
