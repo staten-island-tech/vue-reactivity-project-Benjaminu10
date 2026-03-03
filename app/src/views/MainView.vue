@@ -1,7 +1,9 @@
 <template>
   <div class="min-h-screen bg-slate-900 px-6 py-10">
     <div class="max-w-7xl mx-auto">
-      <img src="\cart.png" alt="Shopping Cart" class="bg-slate-100 ring-7 ring-slate-200 size-10 rounded-md ">
+    <div class="fixed top-5 right-5 z-50 bg-slate-800 p-2 rounded-xl ring-2 ring-slate-600 shadow-lg hover:bg-slate-700 transition">
+      <img src="/cart.png" alt="Shopping Cart" class="size-7 object-contain" />
+    </div>
       <div class="mb-10 text-center">
         <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight text-white">
           TCG Shop
