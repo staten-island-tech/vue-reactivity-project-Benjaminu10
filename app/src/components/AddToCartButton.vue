@@ -1,14 +1,7 @@
 <template>
   <button
     @click="addCart"
-    class="
-      inline-flex items-center justify-center
-      rounded-lg bg-indigo-600 px-4 py-2
-      text-sm font-semibold text-white
-      hover:bg-indigo-500 active:scale-95
-      transition
-      focus:outline-none focus:ring-2 focus:ring-indigo-500
-    "
+    class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500 active:scale-95 transition focus:outline-none focus:ring-2 focus:ring-indigo-500"
   >
     Add to cart
   </button>
@@ -18,23 +11,15 @@
 import { useCartStore } from '@/stores/cart'
 
 const props = defineProps({
-    product: {
-        type: Object,
-        required: true
-    }
+  product: {
+    type: Object,
+    required: true
+  }
 })
 
-const emit = defineEmits(["add-to-cart"])
-
-const cartStore = useCartStore();
+const cartStore = useCartStore()
 
 function addCart() {
-    emit("add-to-cart", props.product)
-    cartStore.addToCart(props.product)
-    console.log(cartStore.cart)
+  cartStore.addToCart(props.product)
 }
 </script>
-
-<style scoped>
-
-</style>

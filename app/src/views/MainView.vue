@@ -1,9 +1,7 @@
 <template>
   <div class="min-h-screen bg-slate-900 px-6 py-10">
     <div class="max-w-7xl mx-auto">
-    <div class="fixed top-5 right-5 z-50 bg-slate-800 p-2 rounded-xl ring-2 ring-slate-600 shadow-lg hover:bg-slate-700 transition">
-      <img src="/cart.png" alt="Shopping Cart" class="size-7 object-contain" />
-    </div>
+        <CartSidebar />
       <div class="mb-10 text-center">
         <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight text-white">
           TCG Shop
@@ -28,6 +26,8 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import ShopCard from '@/components/ShopCard.vue';
+import CartSidebar from '@/components/CartSidebar.vue';
+
 
 const items = ref([
   // Scarlet & Violet - Temporal Forces

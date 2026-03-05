@@ -7,7 +7,18 @@ export const useCartStore = defineStore('cart', {
 
   actions: {
     addToCart(product) {
-      this.cart.push(product)
+      const existing = this.cart.find(p => p.name === product.name)
+
+      if (existing) {
+        existing.quantity++
+      } else {
+        this.cart.push({ ...product, quantity: 1 })
+      }
     }
+  },
+
+  getters: {
+    cartTotal: (state) =>
+      state.cart.reduce((total, item) => total + item.price * item.quantity, 0)
   }
 })
