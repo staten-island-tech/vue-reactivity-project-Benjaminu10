@@ -8,9 +8,11 @@
 
       <div v-if="open" class="mt-20 px-4">
         <div v-for="item in cartStore.cart" :key="item.name" class="text-white text-sm py-1">
-          {{ item.quantity }}x {{ item.name }} -
-          ${{ item.price }}x{{ item.quantity }} =
-          ${{ (item.price * item.quantity).toFixed(2) }}
+          <div>
+            {{ item.name }} -
+            ${{ item.price }}x{{ item.quantity }} =
+            ${{ (item.price * item.quantity).toFixed(2) }}
+          </div>
         </div>
 
         <div class="border-t border-slate-600 mt-4 pt-3 text-white font-bold">
