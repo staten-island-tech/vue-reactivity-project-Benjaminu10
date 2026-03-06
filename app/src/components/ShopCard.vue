@@ -7,7 +7,7 @@
       <img
         :src="product.img"
         :alt="product.alt"
-        class="h-full w-full object-contain group-hover:scale-105 transition-transform duration-300 text-slate-200"
+        class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300 text-slate-200"
       />
     </div>
 
@@ -22,7 +22,7 @@
 
       <div class="mt-auto flex items-center justify-between">
         <span class="text-lg font-bold text-slate-200">
-          {{ product.price }}
+          ${{ product.price }}
         </span>
 
         <AddToCartButton
