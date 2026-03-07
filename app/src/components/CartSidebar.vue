@@ -7,12 +7,8 @@
       </button>
 
       <div v-if="open" class="mt-20 px-4">
-        <div v-for="item in cartStore.cart" :key="item.name" class="text-white text-sm py-1">
-          <div>
-            {{ item.name }} -
-            ${{ item.price }}x{{ item.quantity }} =
-            ${{ (item.price * item.quantity).toFixed(2) }}
-          </div>
+        <div class="text-white text-sm py-1">
+          <CartItem v-for="item in cartStore.cart" :key="item.name" :item="item"></CartItem>
         </div>
 
         <div class="border-t border-slate-600 mt-4 pt-3 text-white font-bold">
@@ -30,6 +26,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useCartStore } from '@/stores/cart'
+import CartItem from './CartItem.vue';
 
 const cartStore = useCartStore()
 const open = ref(false)

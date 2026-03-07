@@ -14,7 +14,27 @@ export const useCartStore = defineStore('cart', {
       } else {
         this.cart.push({ ...product, quantity: 1 })
       }
+    },
+
+    increaseQuantity(name) {
+      const item = this.cart.find(p => p.name === name)
+      if (item) {
+        item.quantity++
+      }
+    },
+
+    decreaseQuantity(name) {
+      const item = this.cart.find(p => p.name === name)
+
+      if (!item) return
+
+      item.quantity--
+
+      if (item.quantity <= 0) {
+        this.cart = this.cart.filter(p => p.name !== name)
+      }
     }
+    
   },
 
   getters: {
